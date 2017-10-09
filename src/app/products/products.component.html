@@ -4,18 +4,17 @@
   <thead>
     <tr>
       <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
+      <th>Código</th>
+      <th>Descrição</th>
+      <th>Preço</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of products">
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    <tr *ngFor="let product of products, let i = index">
+      <th scope="row">{{ i+1 }}</th>
+      <td>{{ product.code }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.unitPrice | currency:'BRL':true }}</td>
     </tr>
-
   </tbody>
 </table>
